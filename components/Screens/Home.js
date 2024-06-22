@@ -15,16 +15,16 @@ const Home = () => {
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.container}>
           <Image
-            source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/Head.png')}
+            source={require('../../assets/Head.png')}
             style={styles.image}
           />
           <Text style={styles.text}>Highlights</Text>
-          <ScrollView horizontal={true}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <View style={styles.cardContainer}>
               {/* Card 1 */}
               <TouchableOpacity style={styles.card}>
                 <Image
-                  source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/surf.png')}
+                  source={require('../../assets/surf.png')}
                   style={styles.cardImage}
                 />
                 <Text style={styles.cardHeading}>Surfing</Text>
@@ -33,7 +33,7 @@ const Home = () => {
                 </Text>
                 <View style={styles.arrowContainer}>
                   <Image
-                    source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/arrow_forward.png')}
+                    source={require('../../assets/arrow_forward.png')}
                     style={styles.arrowIcon}
                   />
                 </View>
@@ -42,14 +42,14 @@ const Home = () => {
               {/* Card 2 */}
               <TouchableOpacity style={styles.card}>
                 <Image
-                  source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/dance.png')}
+                  source={require('../../assets/dance.png')}
                   style={styles.cardImage}
                 />
                 <Text style={styles.cardHeading}>Hula</Text>
                 <Text style={styles.cardSubHeading}>Try it yourself.</Text>
                 <View style={styles.arrowContainer}>
                   <Image
-                    source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/arrow_forward.png')}
+                    source={require('../../assets/arrow_forward.png')}
                     style={styles.arrowIcon}
                   />
                 </View>
@@ -58,7 +58,7 @@ const Home = () => {
               {/* Card 3 */}
               <TouchableOpacity style={styles.card}>
                 <Image
-                  source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/volcanos.png')}
+                  source={require('../../assets/volcanos.png')}
                   style={styles.cardImage}
                 />
                 <Text style={styles.cardHeading}>Vulcanoes</Text>
@@ -67,7 +67,7 @@ const Home = () => {
                 </Text>
                 <View style={styles.arrowContainer}>
                   <Image
-                    source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/arrow_forward.png')}
+                    source={require('../../assets/arrow_forward.png')}
                     style={styles.arrowIcon}
                   />
                 </View>
@@ -78,15 +78,74 @@ const Home = () => {
         <View style={styles.secondList}>
           <Text style={styles.text}>Categories</Text>
           <View style={styles.categoryContainer}>
-            {['Adventure', 'Culinary', 'Eco-tourism', 'Family', 'Sport'].map((category, index) => (
-              <TouchableOpacity key={index} style={styles.categoryRow}>
-                <Text style={styles.categoryText}>{category}</Text>
-                <Image
-                  source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/arrow_forward.png')}
-                  style={styles.categoryIcon}
-                />
-              </TouchableOpacity>
-            ))}
+            {['Adventure', 'Culinary', 'Eco-tourism', 'Family', 'Sport'].map(
+              (category, index) => (
+                <TouchableOpacity key={index} style={styles.categoryRow}>
+                  <Text style={styles.categoryText}>{category}</Text>
+                  <Image
+                    source={require('../../assets/arrow_forward.png')}
+                    style={styles.categoryIcon}
+                  />
+                </TouchableOpacity>
+              ),
+            )}
+          </View>
+          <Text style={styles.text}>Travel Guide</Text>
+          <View
+            style={{
+              backgroundColor: 'white',
+              padding: 15,
+              borderRadius: 8,
+              marginBottom: 10,
+              marginHorizontal: 20,
+            }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                paddingHorizontal: 15,
+              }}>
+              <View
+                style={{
+                  marginLeft: 10,
+                }}>
+                <Text
+                  style={{
+                    fontSize: 20,
+                    fontWeight: 'bold',
+                    color: 'black',
+                  }}>
+                  Hadwin Malone
+                </Text>
+                <Text style={{}}>Guide since 2012</Text>
+              </View>
+              <Image
+                source={require('../../assets/man.png')}
+                style={{
+                  width: 80,
+                  height: 80,
+                }}
+              />
+            </View>
+            <View style={{
+
+            }}>
+              <Text style={{
+                fontSize: 16,
+                color: '#008080',
+                borderColor: '#008080',
+                fontWeight: 'bold',
+                borderWidth: 1,
+                borderRadius: 8,
+                padding: 10,
+                textAlign: 'center',
+                marginTop: 10,
+                width: 150,
+                marginLeft: 25,
+              }}>Contact Us</Text>
+            </View>
+            <View></View>
           </View>
         </View>
       </ScrollView>
@@ -133,7 +192,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 5,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     width: 304,
@@ -191,6 +250,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#E6F2F2',
     paddingTop: 20,
     paddingBottom: 20,
+    paddingBottom: 70,
   },
   categoryContainer: {
     paddingHorizontal: 20,
