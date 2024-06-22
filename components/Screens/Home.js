@@ -78,15 +78,33 @@ const Home = () => {
         <View style={styles.secondList}>
           <Text style={styles.text}>Categories</Text>
           <View style={styles.categoryContainer}>
-            {['Adventure', 'Culinary', 'Eco-tourism', 'Family', 'Sport'].map((category, index) => (
-              <TouchableOpacity key={index} style={styles.categoryRow}>
-                <Text style={styles.categoryText}>{category}</Text>
-                <Image
-                  source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/arrow_forward.png')}
-                  style={styles.categoryIcon}
-                />
-              </TouchableOpacity>
-            ))}
+            {['Adventure', 'Culinary', 'Eco-tourism', 'Family', 'Sport'].map(
+              (category, index) => (
+                <TouchableOpacity key={index} style={styles.categoryRow}>
+                  <Text style={styles.categoryText}>{category}</Text>
+                  <Image
+                    source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/arrow_forward.png')}
+                    style={styles.categoryIcon}
+                  />
+                </TouchableOpacity>
+              ),
+            )}
+          </View>
+          <Text style={styles.text}>Travel Guide</Text>
+          <View style={styles.Contactcard}>
+            <View style={styles.infoContainer}>
+              <View style={styles.textContainer}>
+                <Text style={styles.name}>Hadwin Malone</Text>
+                <Text style={styles.subText}>Guide since 2012</Text>
+              </View>
+              <Image
+                source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/profile.png')} // Replace with your image path
+                style={styles.profileImage}
+              />
+            </View>
+            <TouchableOpacity style={styles.contactButton}>
+              <Text style={styles.contactButtonText}>Contact</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -133,7 +151,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 5,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     width: 304,
@@ -214,6 +232,55 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     tintColor: '#008080',
+  },
+  Contactcard: {
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    padding: 20,
+    margin: 20,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    marginBottom: 60,
+  },
+  infoContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  textContainer: {
+    flex: 1,
+    marginRight: 10,
+  },
+  name: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'black',
+  },
+  subText: {
+    fontSize: 16,
+    color: 'black',
+  },
+  profileImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+  },
+  contactButton: {
+    borderColor: '#008080',
+    borderWidth: 1,
+    borderRadius: 8,
+    padding: 10,
+    width: 150,
+  },
+  contactButtonText: {
+    textAlign: 'center',
+    color: '#008080',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 
