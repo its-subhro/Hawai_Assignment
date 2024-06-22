@@ -275,6 +275,55 @@ const styles = StyleSheet.create({
     height: 20,
     tintColor: '#008080',
   },
+  Contactcard: {
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    padding: 20,
+    margin: 20,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    marginBottom: 60,
+  },
+  infoContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  textContainer: {
+    flex: 1,
+    marginRight: 10,
+  },
+  name: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'black',
+  },
+  subText: {
+    fontSize: 16,
+    color: 'black',
+  },
+  profileImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+  },
+  contactButton: {
+    borderColor: '#008080',
+    borderWidth: 1,
+    borderRadius: 8,
+    padding: 10,
+    width: 150,
+  },
+  contactButtonText: {
+    textAlign: 'center',
+    color: '#008080',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });
 
 export default Home;
