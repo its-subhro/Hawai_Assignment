@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
+import {View, Text, SafeAreaView, StyleSheet, Image} from 'react-native';
 
 export default function Navbar() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <Text style={styles.text}>Aloha</Text>
+        <Image
+          source={require('../assets/aloha.png')} // Replace with your image path
+        />
       </View>
     </SafeAreaView>
   );
