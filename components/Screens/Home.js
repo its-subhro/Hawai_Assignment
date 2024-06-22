@@ -1,10 +1,18 @@
 import React from 'react';
-import { View, Text, SafeAreaView, ScrollView, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 
 const Home = () => {
   return (
-    <SafeAreaView >
-      <ScrollView >
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.container}>
           <Image
             source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/Head.png')}
@@ -12,7 +20,6 @@ const Home = () => {
           />
           <Text style={styles.text}>Highlights</Text>
           <ScrollView horizontal={true}>
-            {/* List of Cards */}
             <View style={styles.cardContainer}>
               {/* Card 1 */}
               <TouchableOpacity style={styles.card}>
@@ -21,7 +28,9 @@ const Home = () => {
                   style={styles.cardImage}
                 />
                 <Text style={styles.cardHeading}>Surfing</Text>
-                <Text style={styles.cardSubHeading}>Best Hawaiian islands for surfing.</Text>
+                <Text style={styles.cardSubHeading}>
+                  Best Hawaiian islands for surfing.
+                </Text>
                 <View style={styles.arrowContainer}>
                   <Image
                     source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/arrow_forward.png')}
@@ -53,7 +62,9 @@ const Home = () => {
                   style={styles.cardImage}
                 />
                 <Text style={styles.cardHeading}>Vulcanoes</Text>
-                <Text style={styles.cardSubHeading}>Volcanic conditions can change at any time.</Text>
+                <Text style={styles.cardSubHeading}>
+                  Volcanic conditions can change at any time.
+                </Text>
                 <View style={styles.arrowContainer}>
                   <Image
                     source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/arrow_forward.png')}
@@ -64,21 +75,42 @@ const Home = () => {
             </View>
           </ScrollView>
         </View>
+        <View style={styles.secondList}>
+          <Text style={styles.text}>Categories</Text>
+          <View style={styles.categoryContainer}>
+            {['Adventure', 'Culinary', 'Eco-tourism', 'Family', 'Sport'].map((category, index) => (
+              <TouchableOpacity key={index} style={styles.categoryRow}>
+                <Text style={styles.categoryText}>{category}</Text>
+                <Image
+                  source={require('/Users/subhrojyotisen/Desktop/Myfirstproject/assets/arrow_forward.png')}
+                  style={styles.categoryIcon}
+                />
+              </TouchableOpacity>
+            ))}
+          </View>
+        </View>
       </ScrollView>
+      <TouchableOpacity style={styles.fixedButton}>
+        <Text style={styles.buttonText}>Book a trip</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
   scrollViewContent: {
     flexGrow: 1,
   },
   container: {
     flex: 1,
-    alignItems: 'center',
+    backgroundColor: 'white',
   },
   image: {
-    width: 412,
+    width: '100%',
     height: 600,
     marginBottom: 20,
     opacity: 1,
@@ -86,7 +118,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 10,
+    margin: 20,
+    color: 'black',
   },
   cardContainer: {
     flexDirection: 'row',
@@ -98,15 +131,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     borderRadius: 8,
-    elevation: 3,
+    elevation: 5,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
     width: 304,
     height: 340,
-    marginBottom: 20,
-    marginRight: 20,
+    marginHorizontal: 10,
+    marginBottom: 50,
   },
   cardImage: {
     width: '100%',
@@ -126,6 +159,7 @@ const styles = StyleSheet.create({
     color: 'black',
     textAlign: 'center',
     marginBottom: 10,
+    paddingHorizontal: 10,
   },
   arrowContainer: {
     position: 'absolute',
@@ -137,7 +171,50 @@ const styles = StyleSheet.create({
     height: 20,
     tintColor: '#008080',
   },
-  
+  fixedButton: {
+    position: 'absolute',
+    bottom: 10,
+    left: '5%',
+    right: '5%',
+    backgroundColor: '#008080',
+    padding: 15,
+    zIndex: 1000,
+    alignItems: 'center',
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  secondList: {
+    backgroundColor: '#E6F2F2',
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
+  categoryContainer: {
+    paddingHorizontal: 20,
+  },
+  categoryRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    padding: 15,
+    borderRadius: 8,
+    marginBottom: 10,
+    height: 70,
+  },
+  categoryText: {
+    fontSize: 16,
+    color: 'black',
+    fontWeight: 'semi-bold',
+  },
+  categoryIcon: {
+    width: 20,
+    height: 20,
+    tintColor: '#008080',
+  },
 });
 
 export default Home;

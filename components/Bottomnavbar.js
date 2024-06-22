@@ -11,19 +11,15 @@ const Tab = createBottomTabNavigator();
 function BottomTabNavigator() {
   return (
     <Tab.Navigator
-    
-      tabBarOptions={{
-        activeTintColor: 'green',
-        inactiveTintColor: 'black',
-        labelStyle: {
+      screenOptions={({ route }) => ({
+        tabBarActiveTintColor: 'green',
+        tabBarInactiveTintColor: 'black',
+        tabBarLabelStyle: {
           fontSize: 10,
           fontWeight: 'bold',
-          marginBottom: 6, 
+          marginBottom: 6,
         },
-      }}
-      screenOptions={({ route }) => ({
-        
-        tabBarIcon: ({ color, size }) => {
+        tabBarIcon: ({ color }) => {
           let iconSource;
           if (route.name === 'Home') {
             iconSource = require('../assets/home.png');
